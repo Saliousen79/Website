@@ -133,12 +133,12 @@ const ReadingList = () => {
             {t('bookRecommendations')}
           </h1>
           <p className="text-xl text-gray-300">
-            Eine Sammlung von Büchern, die mich inspirieren und weiterentwickeln.
+            Schon als Kind habe ich gerne und viel gelesen. Hier sind einige meiner Lieblingsbücher.
           </p>
         </div>
 
         {/* Books Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-full mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-full mx-auto px-8">
           {books.map((book, index) => (
             <div key={book.id} className="flex flex-col items-center">
               {/* Book Cover - with green frame and smaller size */}
@@ -155,7 +155,7 @@ const ReadingList = () => {
                   transitionDelay: isVisible ? `${1200 + index * 150}ms` : '0ms',
                 }}
               >
-                <div className="p-6 bg-dark-green-800 rounded-xl border-3 border-gold-500/40 shadow-lg shadow-gold-500/10 hover:shadow-2xl hover:shadow-gold-500/40 transition-all duration-300 hover:-translate-y-4 hover:scale-110 group flex items-center justify-center w-80 h-96">
+                <div className="p-6 bg-dark-green-800 rounded-xl border-3 border-gold-500/40 shadow-lg shadow-gold-500/10 hover:shadow-2xl hover:shadow-gold-500/40 transition-all duration-300 hover:-translate-y-4 hover:scale-110 group flex items-center justify-center w-72 h-96">
                   <img
                     src={book.image}
                     alt={book.title}
@@ -197,7 +197,7 @@ const ReadingList = () => {
         {/* Info */}
         <div className="mt-20 p-6 bg-gold-500/10 border border-gold-500/20 rounded-xl max-w-2xl mx-auto">
           <p className="text-gray-300 text-center text-sm">
-            <strong>💡 Tipp:</strong> Um neue Bücher hinzuzufügen, bearbeiten Sie die <code className="text-gold-400 bg-dark-green-900/50 px-2 py-1 rounded">books</code> Array in der <code className="text-gold-400 bg-dark-green-900/50 px-2 py-1 rounded">reading-list/page.tsx</code> Datei. Nutzen Sie Amazon-Bild-URLs von Ihren Büchern.
+            <strong>💡 Tipp:</strong> Klicke auf die Bücher um direkt auf den 
           </p>
         </div>
       </div>

@@ -13,6 +13,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Matcher für alle Pfade außer API, _next/static, _next/image, favicon.ico
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  // Matcher für alle Pfade außer API, _next/static, _next/image, assets, favicon.ico
+  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico).*)'],
 };

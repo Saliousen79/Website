@@ -66,7 +66,7 @@ const About = () => {
             <div className="flex justify-center md:justify-start">
               <div className="p-4 bg-dark-green-800 dark:bg-dark-green-900 rounded-lg border-2 border-gold-500/30 overflow-hidden">
                 <img
-                  src="/assets/wueste.jpg?v=1"
+                  src="/assets/wueste2.png?v=1"
                   alt="Wüste"
                   className="w-full h-auto rounded max-w-sm object-cover"
                   style={{ backgroundImage: 'none' }}

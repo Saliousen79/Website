@@ -10,7 +10,7 @@ const Hero = () => {
   // HIER KÖNNEN SIE DAS HINTERGRUNDBILD ÄNDERN
   // Setzen Sie backgroundImage auf die URL Ihres Bildes oder null für den Gradient
   // z.B.: const backgroundImage = 'https://example.com/your-image.jpg';
-  const backgroundImage: string | null = '/assets/wueste.jpg?v=1';
+  const backgroundImage: string | null = None;
 
   // HIER KÖNNEN SIE DAS PROFILBILD ÄNDERN
   // Setzen Sie profileImage auf die URL Ihres Bildes oder null für das Emoji

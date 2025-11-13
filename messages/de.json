@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "resume": "Lebenslauf",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "welcome": "Willkommen",
+    "name": "Ihr Name",
+    "title": "Full-Stack Developer & UI/UX Enthusiast",
+    "description": "Ich erstelle moderne, benutzerfreundliche Webanwendungen mit den neuesten Technologien. Leidenschaftlich über Clean Code, Performance und User Experience.",
+    "contactButton": "Kontaktieren Sie mich",
+    "projectsButton": "Projekte ansehen"
+  },
+  "about": {
+    "title": "Über mich",
+    "intro1": "Hallo! Ich bin ein leidenschaftlicher Full-Stack Developer mit Fokus auf moderne Webtechnologien. Mit mehreren Jahren Erfahrung in der Softwareentwicklung habe ich zahlreiche Projekte erfolgreich umgesetzt.",
+    "intro2": "Meine Stärke liegt in der Entwicklung von skalierbaren, performanten und benutzerfreundlichen Anwendungen. Ich bin ständig auf der Suche nach neuen Herausforderungen und Möglichkeiten, meine Fähigkeiten zu erweitern.",
+    "intro3": "Neben dem Programmieren interessiere ich mich für UI/UX Design, Cloud Computing und agile Entwicklungsmethoden. Ich glaube an sauberen Code, kontinuierliches Lernen und die Kraft der Zusammenarbeit.",
+    "skillsTitle": "Skills & Expertise",
+    "yearsExperience": "Jahre Erfahrung",
+    "projectsCompleted": "Projekte",
+    "satisfaction": "Zufriedenheit"
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "subtitle": "Eine Auswahl meiner jüngsten Arbeiten und Projekte, die ich mit Leidenschaft entwickelt habe.",
+    "liveDemo": "Live Demo",
+    "project1": {
+      "title": "E-Commerce Platform",
+      "description": "Eine vollständige E-Commerce-Lösung mit Produktverwaltung, Warenkorb, Zahlungsintegration und Admin-Dashboard."
+    },
+    "project2": {
+      "title": "Social Media Dashboard",
+      "description": "Echtzeit-Dashboard zur Überwachung und Analyse von Social Media Metriken mit interaktiven Charts und Statistiken."
+    },
+    "project3": {
+      "title": "Task Management App",
+      "description": "Kollaborative Aufgabenverwaltung mit Drag & Drop, Team-Features, Benachrichtigungen und Zeiterfassung."
+    },
+    "project4": {
+      "title": "AI Content Generator",
+      "description": "KI-gestützte Content-Generierung für Blogs und Social Media mit verschiedenen Schreibstilen und Formaten."
+    },
+    "project5": {
+      "title": "Weather Dashboard",
+      "description": "Interaktives Wetter-Dashboard mit Vorhersagen, interaktiven Karten und Benachrichtigungen bei Wetteränderungen."
+    },
+    "project6": {
+      "title": "Portfolio CMS",
+      "description": "Headless CMS speziell für Portfolio-Websites mit Drag & Drop Editor und Multi-Tenancy Support."
+    }
+  },
+  "resume": {
+    "title": "Lebenslauf",
+    "subtitle": "Mein beruflicher Werdegang und meine Ausbildung im Überblick.",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "downloadCV": "Lebenslauf herunterladen",
+    "exp1": {
+      "title": "Senior Full-Stack Developer",
+      "company": "Tech Solutions GmbH",
+      "period": "2022 - Heute",
+      "description": "Leitung der Entwicklung von Enterprise-Web-Anwendungen mit React und Node.js. Implementierung von CI/CD Pipelines und Mentoring von Junior-Entwicklern.",
+      "achievement1": "Reduzierung der Ladezeiten um 40%",
+      "achievement2": "Migration zu Microservices-Architektur",
+      "achievement3": "Team-Lead für 5 Entwickler"
+    },
+    "exp2": {
+      "title": "Full-Stack Developer",
+      "company": "Digital Innovations AG",
+      "period": "2020 - 2022",
+      "description": "Entwicklung von responsiven Webanwendungen und RESTful APIs. Enge Zusammenarbeit mit UX-Designern zur Optimierung der Benutzererfahrung.",
+      "achievement1": "Entwicklung von 15+ Web-Projekten",
+      "achievement2": "Einführung von TypeScript im Team",
+      "achievement3": "Code-Review und Best Practices"
+    },
+    "exp3": {
+      "title": "Junior Web Developer",
+      "company": "Creative Web Studio",
+      "period": "2018 - 2020",
+      "description": "Unterstützung bei der Entwicklung von Websites und Webanwendungen. Erlernen moderner Frameworks und agiler Entwicklungsmethoden.",
+      "achievement1": "Zertifizierung in React und Node.js",
+      "achievement2": "Beitrag zu Open-Source-Projekten",
+      "achievement3": "Scrum Master Zertifikat"
+    },
+    "edu1": {
+      "degree": "Master of Science in Informatik",
+      "school": "Technische Universität",
+      "period": "2016 - 2018",
+      "description": "Schwerpunkt auf Softwareentwicklung, Algorithmen und Datenstrukturen. Masterarbeit über moderne Web-Architekturen.",
+      "achievement1": "Abschluss mit Auszeichnung",
+      "achievement2": "Publikation in Fachzeitschrift",
+      "achievement3": "Stipendiat des DAAD"
+    },
+    "edu2": {
+      "degree": "Bachelor of Science in Informatik",
+      "school": "Universität",
+      "period": "2013 - 2016",
+      "description": "Grundlagen der Informatik, Programmierung, Datenbanken und Netzwerke. Bachelorarbeit über responsive Webdesign.",
+      "achievement1": "Notendurchschnitt 1,5",
+      "achievement2": "Gewinner des Hackathons 2015",
+      "achievement3": "Tutor für Programmierung"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie ein Projekt im Kopf oder möchten Sie einfach nur Hallo sagen? Ich freue mich auf Ihre Nachricht!",
+    "info": "Kontaktinformationen",
+    "infoText": "Lassen Sie uns gemeinsam etwas Großartiges schaffen. Ich bin immer offen für neue Projekte und Kooperationen.",
+    "email": "Email",
+    "phone": "Telefon",
+    "location": "Standort",
+    "locationValue": "Berlin, Deutschland",
+    "follow": "Folgen Sie mir",
+    "formName": "Name",
+    "formNamePlaceholder": "Ihr Name",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "ihre.email@example.com",
+    "formSubject": "Betreff",
+    "formSubjectPlaceholder": "Wie kann ich helfen?",
+    "formMessage": "Nachricht",
+    "formMessagePlaceholder": "Ihre Nachricht...",
+    "formSending": "Wird gesendet...",
+    "formSend": "Nachricht senden",
+    "formSuccess": "Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden."
+  },
+  "footer": {
+    "madeWith": "Erstellt mit ❤️ mit Next.js & Tailwind CSS",
+    "rights": "Alle Rechte vorbehalten"
+  }
+}

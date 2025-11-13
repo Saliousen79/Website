@@ -11,10 +11,13 @@ const Resume = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Längere Verzögerung vor dem Start der Animation
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 400);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -100,30 +103,30 @@ const Resume = () => {
     <section
       id="resume"
       ref={sectionRef}
-      className="min-h-screen py-20 bg-white dark:bg-gray-800"
+      className="min-h-screen py-20 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`transition-all duration-[2000ms] ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
             Lebenslauf
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
             Mein beruflicher Werdegang und meine Ausbildung im Überblick.
           </p>
 
           {/* Tab Navigation */}
           <div className="flex justify-center mb-12">
-            <div className="inline-flex rounded-lg bg-gray-100 dark:bg-gray-700 p-1">
+            <div className="inline-flex rounded-lg bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 p-1">
               <button
                 onClick={() => setActiveTab('experience')}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'experience'
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-dark-green-900 shadow-lg shadow-gold-500/30'
+                    : 'text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400'
                 }`}
               >
                 Berufserfahrung
@@ -132,8 +135,8 @@ const Resume = () => {
                 onClick={() => setActiveTab('education')}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'education'
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-dark-green-900 shadow-lg shadow-gold-500/30'
+                    : 'text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400'
                 }`}
               >
                 Ausbildung
@@ -144,13 +147,13 @@ const Resume = () => {
           {/* Timeline */}
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-600 to-purple-600 hidden md:block" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-gold-500 to-gold-600 hidden md:block" />
 
             <div className="space-y-12">
               {currentData.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative transition-all duration-700 ${
+                  className={`relative transition-all duration-[2000ms] ease-out ${
                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                   }`}
                   style={{
@@ -163,25 +166,25 @@ const Resume = () => {
                     }`}
                   >
                     {/* Timeline dot */}
-                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white dark:border-gray-800" />
+                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full border-4 border-dark-green-900 dark:border-dark-green-900" />
 
                     {/* Content */}
                     <div className="flex-1 md:w-1/2">
-                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                      <div className="bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 p-6 rounded-xl shadow-lg shadow-gold-500/10 hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-300">
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                          <h3 className="text-xl font-bold text-gold-400 dark:text-gold-400">
                             {'title' in item ? item.title : item.degree}
                           </h3>
-                          <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full whitespace-nowrap ml-2">
+                          <span className="text-sm font-semibold text-gold-400 dark:text-gold-400 bg-gold-500/20 dark:bg-gold-500/20 border border-gold-500/30 px-3 py-1 rounded-full whitespace-nowrap ml-2">
                             {item.period}
                           </span>
                         </div>
 
-                        <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
+                        <h4 className="text-lg font-semibold text-gold-400 dark:text-gold-400 mb-3">
                           {'company' in item ? item.company : item.school}
                         </h4>
 
-                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        <p className="text-gray-300 dark:text-gray-300 mb-4">
                           {item.description}
                         </p>
 
@@ -189,7 +192,7 @@ const Resume = () => {
                           {item.achievements.map((achievement, i) => (
                             <div key={i} className="flex items-start gap-2">
                               <svg
-                                className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
+                                className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0"
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                               >
@@ -199,7 +202,7 @@ const Resume = () => {
                                   clipRule="evenodd"
                                 />
                               </svg>
-                              <span className="text-sm text-gray-600 dark:text-gray-400">
+                              <span className="text-sm text-gray-300 dark:text-gray-300">
                                 {achievement}
                               </span>
                             </div>

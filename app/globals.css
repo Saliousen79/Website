@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #001912;
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #001912;
     --foreground: #ededed;
   }
 }
@@ -20,8 +20,10 @@ html {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(135deg, #001912 0%, #003D2E 50%, #001912 100%);
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
 
 @layer utilities {
@@ -36,14 +38,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #001912;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: linear-gradient(to bottom, #D4AF37, #A68535);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: linear-gradient(to bottom, #FFD966, #D4AF37);
 }

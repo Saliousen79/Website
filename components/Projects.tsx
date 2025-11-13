@@ -10,10 +10,13 @@ const Projects = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Längere Verzögerung vor dem Start der Animation
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 400);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -88,18 +91,18 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="min-h-screen py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="min-h-screen py-20 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`transition-all duration-[2000ms] ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
             Meine Projekte
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
             Eine Auswahl meiner jüngsten Arbeiten und Projekte, die ich mit Leidenschaft
             entwickelt habe.
           </p>
@@ -108,22 +111,22 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                className={`bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-xl shadow-lg shadow-gold-500/10 overflow-hidden hover:shadow-2xl hover:shadow-gold-500/20 transform hover:-translate-y-2 transition-all duration-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
                 }`}
                 style={{
-                  transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
+                  transitionDelay: isVisible ? `${index * 200}ms` : '0ms',
                 }}
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center">
                   <span className="text-8xl">{project.image}</span>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold mb-2 text-gold-400 dark:text-gold-400">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                  <p className="text-gray-300 dark:text-gray-300 mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -131,7 +134,7 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-semibold"
+                        className="px-3 py-1 bg-gold-500/20 dark:bg-gold-500/20 text-gold-400 dark:text-gold-400 border border-gold-500/30 rounded-full text-xs font-semibold"
                       >
                         {tech}
                       </span>
@@ -141,13 +144,13 @@ const Projects = () => {
                   <div className="flex gap-4">
                     <a
                       href={project.link}
-                      className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                      className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-dark-green-900 rounded-lg font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300"
                     >
                       Live Demo
                     </a>
                     <a
                       href={project.github}
-                      className="px-4 py-2 border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all duration-300"
+                      className="px-4 py-2 border-2 border-gold-500 text-gold-400 dark:border-gold-500 dark:text-gold-400 rounded-lg font-semibold hover:bg-gold-500/10 dark:hover:bg-gold-500/20 transition-all duration-300"
                     >
                       <svg
                         className="w-6 h-6"

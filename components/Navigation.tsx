@@ -1,17 +1,20 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navigation = () => {
+  const t = useTranslations('nav');
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'Über mich' },
-    { id: 'projects', label: 'Projekte' },
-    { id: 'resume', label: 'Lebenslauf' },
-    { id: 'contact', label: 'Kontakt' },
+    { id: 'hero', label: t('home') },
+    { id: 'about', label: t('about') },
+    { id: 'projects', label: t('projects') },
+    { id: 'resume', label: t('resume') },
+    { id: 'contact', label: t('contact') },
   ];
 
   useEffect(() => {
@@ -36,7 +39,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -53,44 +56,46 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg'
+          ? 'bg-dark-green-900/90 dark:bg-dark-green-900/95 backdrop-blur-md shadow-lg shadow-gold-500/10'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
               Portfolio
             </h1>
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center gap-2">
+            <div className="flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                      ? 'text-gold-400 dark:text-gold-400 bg-gold-500/20 dark:bg-gold-500/20'
+                      : 'text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 hover:bg-gold-500/10 dark:hover:bg-gold-500/10'
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
             <button
               onClick={() => {
                 const mobileMenu = document.getElementById('mobile-menu');
                 mobileMenu?.classList.toggle('hidden');
               }}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -112,7 +117,7 @@ const Navigation = () => {
       </div>
 
       {/* Mobile menu */}
-      <div id="mobile-menu" className="hidden md:hidden bg-white dark:bg-gray-900 shadow-lg">
+      <div id="mobile-menu" className="hidden md:hidden bg-dark-green-900 dark:bg-dark-green-900 shadow-lg shadow-gold-500/10">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item) => (
             <button
@@ -123,8 +128,8 @@ const Navigation = () => {
               }}
               className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                 activeSection === item.id
-                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                  ? 'text-gold-400 dark:text-gold-400 bg-gold-500/20 dark:bg-gold-500/20'
+                  : 'text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 hover:bg-gold-500/10 dark:hover:bg-gold-500/10'
               }`}
             >
               {item.label}

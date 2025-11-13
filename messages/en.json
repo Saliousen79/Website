@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome",
+    "name": "Your Name",
+    "title": "Full-Stack Developer & UI/UX Enthusiast",
+    "description": "I create modern, user-friendly web applications with the latest technologies. Passionate about Clean Code, Performance and User Experience.",
+    "contactButton": "Contact Me",
+    "projectsButton": "View Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "intro1": "Hello! I'm a passionate Full-Stack Developer focused on modern web technologies. With several years of experience in software development, I have successfully implemented numerous projects.",
+    "intro2": "My strength lies in developing scalable, performant and user-friendly applications. I am constantly looking for new challenges and opportunities to expand my skills.",
+    "intro3": "Besides programming, I'm interested in UI/UX Design, Cloud Computing and agile development methods. I believe in clean code, continuous learning and the power of collaboration.",
+    "skillsTitle": "Skills & Expertise",
+    "yearsExperience": "Years Experience",
+    "projectsCompleted": "Projects",
+    "satisfaction": "Satisfaction"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A selection of my recent work and projects that I have developed with passion.",
+    "liveDemo": "Live Demo",
+    "project1": {
+      "title": "E-Commerce Platform",
+      "description": "A complete e-commerce solution with product management, shopping cart, payment integration and admin dashboard."
+    },
+    "project2": {
+      "title": "Social Media Dashboard",
+      "description": "Real-time dashboard for monitoring and analyzing social media metrics with interactive charts and statistics."
+    },
+    "project3": {
+      "title": "Task Management App",
+      "description": "Collaborative task management with drag & drop, team features, notifications and time tracking."
+    },
+    "project4": {
+      "title": "AI Content Generator",
+      "description": "AI-powered content generation for blogs and social media with various writing styles and formats."
+    },
+    "project5": {
+      "title": "Weather Dashboard",
+      "description": "Interactive weather dashboard with forecasts, interactive maps and notifications for weather changes."
+    },
+    "project6": {
+      "title": "Portfolio CMS",
+      "description": "Headless CMS specifically for portfolio websites with drag & drop editor and multi-tenancy support."
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "An overview of my professional career and education.",
+    "experience": "Work Experience",
+    "education": "Education",
+    "downloadCV": "Download Resume",
+    "exp1": {
+      "title": "Senior Full-Stack Developer",
+      "company": "Tech Solutions GmbH",
+      "period": "2022 - Present",
+      "description": "Leading the development of enterprise web applications with React and Node.js. Implementation of CI/CD pipelines and mentoring junior developers.",
+      "achievement1": "Reduced load times by 40%",
+      "achievement2": "Migration to microservices architecture",
+      "achievement3": "Team lead for 5 developers"
+    },
+    "exp2": {
+      "title": "Full-Stack Developer",
+      "company": "Digital Innovations AG",
+      "period": "2020 - 2022",
+      "description": "Development of responsive web applications and RESTful APIs. Close collaboration with UX designers to optimize user experience.",
+      "achievement1": "Developed 15+ web projects",
+      "achievement2": "Introduced TypeScript to the team",
+      "achievement3": "Code review and best practices"
+    },
+    "exp3": {
+      "title": "Junior Web Developer",
+      "company": "Creative Web Studio",
+      "period": "2018 - 2020",
+      "description": "Supporting the development of websites and web applications. Learning modern frameworks and agile development methods.",
+      "achievement1": "Certification in React and Node.js",
+      "achievement2": "Contribution to open source projects",
+      "achievement3": "Scrum Master Certificate"
+    },
+    "edu1": {
+      "degree": "Master of Science in Computer Science",
+      "school": "Technical University",
+      "period": "2016 - 2018",
+      "description": "Focus on software development, algorithms and data structures. Master's thesis on modern web architectures.",
+      "achievement1": "Graduated with honors",
+      "achievement2": "Publication in professional journal",
+      "achievement3": "DAAD scholarship recipient"
+    },
+    "edu2": {
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University",
+      "period": "2013 - 2016",
+      "description": "Basics of computer science, programming, databases and networks. Bachelor thesis on responsive web design.",
+      "achievement1": "GPA 1.5",
+      "achievement2": "Winner of 2015 Hackathon",
+      "achievement3": "Programming tutor"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind or just want to say hello? I look forward to hearing from you!",
+    "info": "Contact Information",
+    "infoText": "Let's create something great together. I'm always open to new projects and collaborations.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Berlin, Germany",
+    "follow": "Follow Me",
+    "formName": "Name",
+    "formNamePlaceholder": "Your Name",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "your.email@example.com",
+    "formSubject": "Subject",
+    "formSubjectPlaceholder": "How can I help?",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Your message...",
+    "formSending": "Sending...",
+    "formSend": "Send Message",
+    "formSuccess": "Thank you for your message! I will get back to you soon."
+  },
+  "footer": {
+    "madeWith": "Made with ❤️ using Next.js & Tailwind CSS",
+    "rights": "All rights reserved"
+  }
+}

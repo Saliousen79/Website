@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "resume": "CV",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Bienvenue",
+    "name": "Votre Nom",
+    "title": "Développeur Full-Stack & Passionné UI/UX",
+    "description": "Je crée des applications web modernes et conviviales avec les dernières technologies. Passionné par le Clean Code, la Performance et l'Expérience Utilisateur.",
+    "contactButton": "Me Contacter",
+    "projectsButton": "Voir les Projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "intro1": "Bonjour ! Je suis un développeur Full-Stack passionné, axé sur les technologies web modernes. Avec plusieurs années d'expérience dans le développement de logiciels, j'ai réalisé avec succès de nombreux projets.",
+    "intro2": "Ma force réside dans le développement d'applications évolutives, performantes et conviviales. Je suis constamment à la recherche de nouveaux défis et d'opportunités pour élargir mes compétences.",
+    "intro3": "En plus de la programmation, je m'intéresse au design UI/UX, au Cloud Computing et aux méthodes de développement agiles. Je crois au code propre, à l'apprentissage continu et au pouvoir de la collaboration.",
+    "skillsTitle": "Compétences & Expertise",
+    "yearsExperience": "Années d'Expérience",
+    "projectsCompleted": "Projets",
+    "satisfaction": "Satisfaction"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "subtitle": "Une sélection de mes travaux et projets récents que j'ai développés avec passion.",
+    "liveDemo": "Démo en Direct",
+    "project1": {
+      "title": "Plateforme E-Commerce",
+      "description": "Une solution e-commerce complète avec gestion des produits, panier, intégration de paiement et tableau de bord administrateur."
+    },
+    "project2": {
+      "title": "Tableau de Bord Social Media",
+      "description": "Tableau de bord en temps réel pour surveiller et analyser les métriques des médias sociaux avec des graphiques interactifs et des statistiques."
+    },
+    "project3": {
+      "title": "Application de Gestion de Tâches",
+      "description": "Gestion collaborative des tâches avec glisser-déposer, fonctionnalités d'équipe, notifications et suivi du temps."
+    },
+    "project4": {
+      "title": "Générateur de Contenu IA",
+      "description": "Génération de contenu assistée par IA pour les blogs et les médias sociaux avec différents styles d'écriture et formats."
+    },
+    "project5": {
+      "title": "Tableau de Bord Météo",
+      "description": "Tableau de bord météo interactif avec prévisions, cartes interactives et notifications pour les changements météorologiques."
+    },
+    "project6": {
+      "title": "CMS Portfolio",
+      "description": "CMS headless spécialement conçu pour les sites de portfolio avec éditeur glisser-déposer et support multi-tenant."
+    }
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Un aperçu de mon parcours professionnel et de ma formation.",
+    "experience": "Expérience Professionnelle",
+    "education": "Formation",
+    "downloadCV": "Télécharger le CV",
+    "exp1": {
+      "title": "Développeur Full-Stack Senior",
+      "company": "Tech Solutions GmbH",
+      "period": "2022 - Présent",
+      "description": "Direction du développement d'applications web d'entreprise avec React et Node.js. Mise en œuvre de pipelines CI/CD et mentorat de développeurs juniors.",
+      "achievement1": "Réduction des temps de chargement de 40%",
+      "achievement2": "Migration vers l'architecture microservices",
+      "achievement3": "Chef d'équipe pour 5 développeurs"
+    },
+    "exp2": {
+      "title": "Développeur Full-Stack",
+      "company": "Digital Innovations AG",
+      "period": "2020 - 2022",
+      "description": "Développement d'applications web responsives et d'API RESTful. Collaboration étroite avec les designers UX pour optimiser l'expérience utilisateur.",
+      "achievement1": "Développement de plus de 15 projets web",
+      "achievement2": "Introduction de TypeScript dans l'équipe",
+      "achievement3": "Revue de code et meilleures pratiques"
+    },
+    "exp3": {
+      "title": "Développeur Web Junior",
+      "company": "Creative Web Studio",
+      "period": "2018 - 2020",
+      "description": "Soutien au développement de sites web et d'applications web. Apprentissage des frameworks modernes et des méthodes de développement agiles.",
+      "achievement1": "Certification en React et Node.js",
+      "achievement2": "Contribution aux projets open source",
+      "achievement3": "Certificat Scrum Master"
+    },
+    "edu1": {
+      "degree": "Master en Informatique",
+      "school": "Université Technique",
+      "period": "2016 - 2018",
+      "description": "Spécialisation en développement de logiciels, algorithmes et structures de données. Thèse de master sur les architectures web modernes.",
+      "achievement1": "Diplômé avec mention",
+      "achievement2": "Publication dans une revue professionnelle",
+      "achievement3": "Boursier du DAAD"
+    },
+    "edu2": {
+      "degree": "Licence en Informatique",
+      "school": "Université",
+      "period": "2013 - 2016",
+      "description": "Fondamentaux de l'informatique, programmation, bases de données et réseaux. Mémoire de licence sur le design web responsive.",
+      "achievement1": "Moyenne de 1,5",
+      "achievement2": "Gagnant du Hackathon 2015",
+      "achievement3": "Tuteur de programmation"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Vous avez un projet en tête ou voulez simplement dire bonjour ? J'attends avec impatience votre message !",
+    "info": "Informations de Contact",
+    "infoText": "Créons quelque chose de formidable ensemble. Je suis toujours ouvert aux nouveaux projets et collaborations.",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "locationValue": "Berlin, Allemagne",
+    "follow": "Suivez-moi",
+    "formName": "Nom",
+    "formNamePlaceholder": "Votre nom",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "votre.email@example.com",
+    "formSubject": "Sujet",
+    "formSubjectPlaceholder": "Comment puis-je vous aider ?",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Votre message...",
+    "formSending": "Envoi en cours...",
+    "formSend": "Envoyer le Message",
+    "formSuccess": "Merci pour votre message ! Je vous répondrai bientôt."
+  },
+  "footer": {
+    "madeWith": "Créé avec ❤️ en utilisant Next.js & Tailwind CSS",
+    "rights": "Tous droits réservés"
+  }
+}

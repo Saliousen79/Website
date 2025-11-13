@@ -95,7 +95,7 @@ const Projects = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-[2000ms] ease-out ${
+          className={`transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
@@ -111,11 +111,11 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-xl shadow-lg shadow-gold-500/10 overflow-hidden hover:shadow-2xl hover:shadow-gold-500/20 transform hover:-translate-y-2 transition-all duration-300 ${
+                className={`bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-xl shadow-lg shadow-gold-500/10 overflow-hidden hover:shadow-2xl hover:shadow-gold-500/20 transform hover:-translate-y-2 transition-all duration-1000 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
                 }`}
                 style={{
-                  transitionDelay: isVisible ? `${index * 200}ms` : '0ms',
+                  transitionDelay: isVisible ? `${1000 + index * 150}ms` : '0ms',
                 }}
               >
                 <div className="h-48 bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center">

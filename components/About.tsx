@@ -1,8 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 const About = () => {
+  const t = useTranslations('about');
+  const router = useRouter();
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -47,7 +52,7 @@ const About = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-[2000ms] ease-out ${
+          className={`transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
@@ -55,7 +60,21 @@ const About = () => {
             Über mich
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Top Section: Image + Text */}
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
+            {/* Image on the left */}
+            <div className="flex justify-center md:justify-start">
+              <div className="p-4 bg-dark-green-800 dark:bg-dark-green-900 rounded-lg border-2 border-gold-500/30 overflow-hidden">
+                <img
+                  src="/assets/wueste.jpg?v=1"
+                  alt="Wüste"
+                  className="w-full h-auto rounded max-w-sm object-cover"
+                  style={{ backgroundImage: 'none' }}
+                />
+              </div>
+            </div>
+
+            {/* Text on the right */}
             <div className="space-y-6">
               <p className="text-lg text-gray-300 dark:text-gray-300 leading-relaxed">
                 Hallo! Ich bin ein leidenschaftlicher Full-Stack Developer mit Fokus auf
@@ -88,8 +107,10 @@ const About = () => {
                 )}
               </div>
             </div>
+          </div>
 
-            <div className="space-y-6">
+          {/* Bottom Section: Skills (Full Width) */}
+          <div className="space-y-6 w-full">
               <h3 className="text-2xl font-semibold mb-6 text-gold-400 dark:text-gold-400">
                 Skills & Expertise
               </h3>
@@ -144,8 +165,20 @@ const About = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Book Recommendations Button */}
+              <div className="flex justify-center pt-12">
+                <button
+                  onClick={() => router.push(`${pathname}/reading-list`)}
+                  className="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-dark-green-900 rounded-lg font-semibold hover:shadow-lg hover:shadow-gold-500/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6z" />
+                  </svg>
+                  {t('bookRecommendations')}
+                </button>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

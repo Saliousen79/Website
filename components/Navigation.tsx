@@ -60,21 +60,16 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
-              Portfolio
-            </h1>
-          </div>
-
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center h-20">
+          {/* Centered Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <div className="flex items-baseline space-x-4">
+            <div className="flex items-baseline space-x-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                     activeSection === item.id
                       ? 'text-gold-400 dark:text-gold-400 bg-gold-500/20 dark:bg-gold-500/20'
                       : 'text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 hover:bg-gold-500/10 dark:hover:bg-gold-500/10'
@@ -84,7 +79,9 @@ const Navigation = () => {
                 </button>
               ))}
             </div>
-            <LanguageSwitcher />
+            <div className="ml-6 border-l border-gold-500/20 pl-6">
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Mobile menu button */}

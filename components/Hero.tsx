@@ -7,6 +7,17 @@ const Hero = () => {
   const t = useTranslations('hero');
   const [isVisible, setIsVisible] = useState(false);
 
+  // HIER KÖNNEN SIE DAS HINTERGRUNDBILD ÄNDERN
+  // Setzen Sie backgroundImage auf die URL Ihres Bildes oder null für den Gradient
+  // z.B.: const backgroundImage = 'https://example.com/your-image.jpg';
+  const backgroundImage: string | null = '/assets/wueste.jpg?v=1';
+
+  // HIER KÖNNEN SIE DAS PROFILBILD ÄNDERN
+  // Setzen Sie profileImage auf die URL Ihres Bildes oder null für das Emoji
+  // Lokale Bilder: const profileImage = '/assets/profile.png';
+  // Online Bilder: const profileImage = 'https://example.com/profile.jpg';
+  const profileImage = '/assets/profile.png';
+
   useEffect(() => {
     // Kleine Verzögerung bevor Animationen starten (wie bei Apple)
     const timer = setTimeout(() => {
@@ -26,30 +37,54 @@ const Hero = () => {
     }
   };
 
+  // Style für Hintergrundbild oder Gradient
+  const heroStyle: React.CSSProperties = backgroundImage
+    ? {
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }
+    : {};
+
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-dark-green-900 via-dark-green-800 to-italian-green-900 dark:from-dark-green-900 dark:via-dark-green-800 dark:to-black overflow-hidden"
+      className="min-h-screen flex items-center justify-center overflow-hidden relative"
+      style={heroStyle}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Gradient Overlay (nur wenn kein Hintergrundbild) */}
+      {!backgroundImage && (
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-green-900 via-dark-green-800 to-italian-green-900 dark:from-dark-green-900 dark:via-dark-green-800 dark:to-black" />
+      )}
+
+      {/* Dark Overlay für bessere Lesbarkeit wenn Hintergrundbild */}
+      {backgroundImage && (
+        <div className="absolute inset-0 bg-black/40" />
+      )}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10">
         <div className="text-center">
           {/* Avatar - erscheint zuerst */}
           <div
-            className={`mb-6 transition-all duration-[1500ms] ease-out ${
+            className={`mb-6 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ transitionDelay: '0ms' }}
           >
             <div className="inline-block p-1 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full shadow-xl shadow-gold-500/20">
-              <div className="bg-dark-green-800 dark:bg-dark-green-900 rounded-full w-32 h-32 flex items-center justify-center border-2 border-gold-500/30">
-                <span className="text-5xl">👨‍💻</span>
+              <div className="bg-dark-green-800 dark:bg-dark-green-900 rounded-full w-32 h-32 flex items-center justify-center border-2 border-gold-500/30 overflow-hidden">
+                {profileImage ? (
+                  <img src={`${profileImage}?v=1`} alt="Profile" className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-5xl">👨‍💻</span>
+                )}
               </div>
             </div>
           </div>
 
           {/* Willkommen - erscheint nach 300ms */}
           <h1
-            className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-[1500ms] ease-out ${
+            className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '300ms' }}
@@ -59,7 +94,7 @@ const Hero = () => {
 
           {/* Name - erscheint nach 550ms */}
           <h2
-            className={`text-3xl md:text-4xl font-semibold mb-4 text-gray-100 dark:text-gray-200 transition-all duration-[1500ms] ease-out ${
+            className={`text-3xl md:text-4xl font-semibold mb-4 text-gray-100 dark:text-gray-200 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '550ms' }}
@@ -69,17 +104,17 @@ const Hero = () => {
 
           {/* Titel - erscheint nach 800ms */}
           <p
-            className={`text-xl md:text-2xl text-gray-300 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-[1500ms] ease-out ${
+            className={`text-xl md:text-2xl text-gray-300 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
-            style={{ transitionDelay: '800ms' }}
+            style={{ transitionDelay: '1200ms' }}
           >
             {t('title')}
           </p>
 
           {/* Beschreibung - erscheint nach 1050ms */}
           <p
-            className={`text-lg text-gray-400 dark:text-gray-400 mb-12 max-w-3xl mx-auto transition-all duration-[1500ms] ease-out ${
+            className={`text-lg text-gray-400 dark:text-gray-400 mb-12 max-w-3xl mx-auto transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '1050ms' }}
@@ -89,10 +124,10 @@ const Hero = () => {
 
           {/* Buttons - erscheinen nach 1300ms */}
           <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-[1500ms] ease-out ${
+            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
-            style={{ transitionDelay: '1300ms' }}
+            style={{ transitionDelay: '1200ms' }}
           >
             <button
               onClick={scrollToContact}
@@ -110,7 +145,7 @@ const Hero = () => {
 
           {/* Social Icons - erscheinen nach 1550ms */}
           <div
-            className={`mt-16 flex justify-center gap-6 transition-all duration-[1500ms] ease-out ${
+            className={`mt-16 flex justify-center gap-6 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '1550ms' }}
@@ -149,10 +184,10 @@ const Hero = () => {
 
       {/* Scroll indicator - erscheint nach 1800ms */}
       <div
-        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] ease-out ${
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-900 ease-out z-20 ${
           isVisible ? 'opacity-100 animate-bounce' : 'opacity-0'
         }`}
-        style={{ transitionDelay: '1800ms' }}
+        style={{ transitionDelay: '2000ms' }}
       >
         <svg
           className="w-6 h-6 text-gold-500"

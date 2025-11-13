@@ -107,7 +107,7 @@ const Resume = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-[2000ms] ease-out ${
+          className={`transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
@@ -153,11 +153,11 @@ const Resume = () => {
               {currentData.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative transition-all duration-[2000ms] ease-out ${
+                  className={`relative transition-all duration-1000 ease-out ${
                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                   }`}
                   style={{
-                    transitionDelay: `${index * 200}ms`,
+                    transitionDelay: `${800 + index * 200}ms`,
                   }}
                 >
                   <div

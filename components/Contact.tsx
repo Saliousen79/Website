@@ -18,10 +18,13 @@ const Contact = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Längere Verzögerung vor dem Start der Animation
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 400);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -118,18 +121,18 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="min-h-screen py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="min-h-screen py-20 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`transition-all duration-900 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
             Kontakt
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
             Haben Sie ein Projekt im Kopf oder möchten Sie einfach nur Hallo sagen? Ich
             freue mich auf Ihre Nachricht!
           </p>
@@ -138,10 +141,10 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-semibold mb-6 text-gold-400">
                   Kontaktinformationen
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-8">
+                <p className="text-gray-300 dark:text-gray-300 mb-8">
                   Lassen Sie uns gemeinsam etwas Großartiges schaffen. Ich bin immer offen
                   für neue Projekte und Kooperationen.
                 </p>
@@ -151,16 +154,16 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.link}
-                      className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition-all duration-300 group"
+                      className="flex items-center gap-4 p-4 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-lg shadow shadow-gold-500/10 hover:shadow-lg hover:shadow-gold-500/20 transition-all duration-300 group"
                     >
-                      <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-lg group-hover:scale-110 transition-transform duration-300">
+                      <div className="p-3 bg-gradient-to-br from-gold-500 to-gold-600 text-dark-green-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
                         {info.icon}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white">
+                        <h4 className="font-semibold text-gold-400">
                           {info.title}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400">{info.value}</p>
+                        <p className="text-gray-300">{info.value}</p>
                       </div>
                     </a>
                   ))}
@@ -169,7 +172,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-4 text-gold-400">
                   Folgen Sie mir
                 </h3>
                 <div className="flex gap-4">
@@ -177,7 +180,7 @@ const Contact = () => {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110"
+                    className="p-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-lg shadow shadow-gold-500/10 hover:shadow-lg hover:shadow-gold-500/20 text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-all duration-300 hover:scale-110"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -187,7 +190,7 @@ const Contact = () => {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110"
+                    className="p-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-lg shadow shadow-gold-500/10 hover:shadow-lg hover:shadow-gold-500/20 text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-all duration-300 hover:scale-110"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -197,7 +200,7 @@ const Contact = () => {
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110"
+                    className="p-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/20 rounded-lg shadow shadow-gold-500/10 hover:shadow-lg hover:shadow-gold-500/20 text-gray-300 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-all duration-300 hover:scale-110"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
@@ -213,7 +216,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-semibold text-gold-400 mb-2"
                   >
                     Name
                   </label>
@@ -224,7 +227,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all duration-300 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/30 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all duration-300 text-gray-300 dark:text-gray-300 placeholder-gray-500"
                     placeholder="Ihr Name"
                   />
                 </div>
@@ -232,7 +235,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-semibold text-gold-400 mb-2"
                   >
                     Email
                   </label>
@@ -243,7 +246,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all duration-300 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/30 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all duration-300 text-gray-300 dark:text-gray-300 placeholder-gray-500"
                     placeholder="ihre.email@example.com"
                   />
                 </div>
@@ -251,7 +254,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-semibold text-gold-400 mb-2"
                   >
                     Betreff
                   </label>
@@ -262,7 +265,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all duration-300 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/30 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all duration-300 text-gray-300 dark:text-gray-300 placeholder-gray-500"
                     placeholder="Wie kann ich helfen?"
                   />
                 </div>
@@ -270,7 +273,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-semibold text-gold-400 mb-2"
                   >
                     Nachricht
                   </label>
@@ -281,7 +284,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all duration-300 resize-none text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-dark-green-800 dark:bg-dark-green-900 border border-gold-500/30 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all duration-300 resize-none text-gray-300 dark:text-gray-300 placeholder-gray-500"
                     placeholder="Ihre Nachricht..."
                   />
                 </div>
@@ -289,7 +292,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 ${
+                  className={`w-full px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-dark-green-900 rounded-lg font-semibold hover:shadow-lg hover:shadow-gold-500/30 transform hover:scale-105 transition-all duration-300 ${
                     isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                   }`}
                 >
@@ -297,7 +300,7 @@ const Contact = () => {
                 </button>
 
                 {submitStatus === 'success' && (
-                  <div className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg">
+                  <div className="p-4 bg-gold-500/20 dark:bg-gold-500/20 border border-gold-500/30 text-gold-400 dark:text-gold-400 rounded-lg">
                     Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.
                   </div>
                 )}
